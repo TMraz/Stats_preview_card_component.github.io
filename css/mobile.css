@@ -1,11 +1,19 @@
-@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;&display=swap);
 
 :root {
-    --color-font: hsla(0, 0%, 100%);
-    --color-bg: hsl(257, 40%, 49%);
-    --color-hover: hsl(300, 69%, 71%);
+    --color-font: hsla(0, 0%, 100%, 0.75);
+    --color-bg-main: hsl(233, 47%, 7%);
+    --color-bg-card: hsl(244, 38%, 16%);
+    --color-span: hsl(277, 64%, 61%);
+    --color-heading: hsl(0, 0%, 100%);
+    --color-stat-heading: hsl(0, 0%, 100%, 0.6);
     --color-atribution:hsl(0, 0%, 80%);
+
+    --ff: 'Lexend Deca', sans-serif;
 }
+
+/* * {outline: 1px dotted rgb(153, 51, 144);} */
 
 /* === GENERAL === */
 html { box-sizing: border-box; }
@@ -19,12 +27,12 @@ html, body {
     font-size: 100%;
     font-weight: 400;
     color: var(--color-font);
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
     height: 100%;
-    background-color: black;
+    background-color: var(--color-bg-main);
 
     display: flex;
     justify-content: center;
@@ -32,115 +40,114 @@ body {
 }
 
 main {
-    width: 430px;
-    height: 930px;
+    width: 370px;
+    height: 900px;
+    margin-top: 1rem;
+    background: var(--color-bg-card);
 
-    padding: 2.5rem;
-
-    background: url(../img/bg-mobile.svg) var(--color-bg) no-repeat;
-    background-size: contain;
+    position: relative;
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     line-height: 2.3rem;
+    color: var(--color-heading);
     text-align: center;
 
-    margin: 4.5rem 0 1.5rem 0;
+    margin: 20px 0 ;
+}
+
+span {
+    color: var(--color-span);
 }
 
 p {
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    line-height: 1.7;
     text-align: center;
 
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 /* === HEADER === */
 header {
-    height: 22.5rem;
+    height: 240px;
+    position: relative;
+    border-radius: .3rem .3rem 0 0;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
 }
 
-.fig-logo img {
-    width: auto;
-    height: 1.8rem;
+.header-img {
+    width: 370px;
+    height: 300px;
+    background: url(../img/image-header-mobile.jpg) no-repeat;
+    background-size: contain;
 }
 
-.mockup {
-    margin-top: 4.5rem ;
-}
-
-.mockup img {
-    width: auto;
-    height: 15.5rem;
-}
-
-/* === BUTTON REGISTER === */
-.btn {
-    display: flex;
-    justify-content: center;
-
-    margin: 3rem 0 3.75rem 0;
-}
-
-.btn a {
+/* === overlay === */
+header::before {
+    content: "";
     display: block;
-    width: 14.5rem;
-    height: 3rem;
-    padding: .75rem 0;
-
-    text-align: center;
-    text-decoration: none;
-    color: var(--color-bg);
-
-    background: white;
-    border-radius: 1.5rem;
-    box-shadow: 0 .3rem .8rem rgba(0, 0, 0, 0.575);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background: var(--color-span);
+    opacity: .5;
 }
 
-.btn a:hover,
-.btn a:active {
-    background: var(--color-hover);
-    color: white;
+/* === ARTICLE === */
+article {
+    padding: 1.25rem 1.875rem;
 }
 
 /* === PRE-FOOTER === */
 .pre-footer {
-    margin-bottom: 2.5rem;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 1.5rem;
+    padding: 0;
     text-align: center;
+    line-height: 1.8rem;
+    text-transform: uppercase;
 }
 
 li {
-    width: 2rem;
-    height: 2rem;
-    margin: .2rem;
-    border-radius: 50%;
-    border: .1rem solid white;
-
-    text-align: center;
-
-    display: inline-block;
-    list-style: none;
+    margin: 1rem 0;
+    font-size: .8rem;
+    letter-spacing: .1rem;
 }
 
-li:hover,
-li:active {
-    border: .1rem solid var(--color-hover);
+li > span {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--color-heading);
 }
 
-li a {
-    color: white;
-    padding-top: .5rem;
-    text-decoration: none;
-}
-
-li a:hover,
-li a:active {
-    color: var(--color-hover);
+ul li:first-child > span {
+    text-transform: lowercase;
 }
 
 /* === FOOTER === */
+main > footer {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+main > footer > p {
+    margin: 0;
+}
 .attribution { font-size: 8px; text-align: center; color: var(--color-atribution)}
 .attribution a { color: var(--color-atribution); }

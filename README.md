@@ -1,6 +1,6 @@
-# Frontend Mentor - Huddle landing page with single introductory section solution
+# Frontend Mentor - Stats preview card component solution
 
-This is a solution to the ![Huddle landing page with single introductory section challenge on Frontend Mentor](./design/desktop-preview.jpg). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the ![Stats preview card component challenge on Frontend Mentor](./design/desktop-preview.jpg). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -22,8 +22,7 @@ This is a solution to the ![Huddle landing page with single introductory section
 
 Users should be able to:
 
-- View the optimal layout for the page depending on their device's screen size
-- See hover states for all interactive elements on the page
+- View the optimal layout depending on their device's screen size
 
 ### Screenshot
 
@@ -32,9 +31,9 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://github.com/TMraz/Huddle_landing_page.github.io)
+- [Solution URL](https://github.com/TMraz/Stats_preview_card_component.github.io)
 
-- [Live Site URL](https://tmraz.github.io/Huddle_landing_page.github.io/)
+- [Live Site URL](https://tmraz.github.io/Stats_preview_card_component.github.io/)
 
 ## My process
 
@@ -42,6 +41,7 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
+- CSS Grid
 - Mobile-first workflow
 - [Styled Components](./css/main.css) - For Desktop style
 - [Styled Components](./css/mobile.css) - For Mobile style
@@ -50,18 +50,19 @@ Users should be able to:
 
 Snippets, see below:
 
-- Background:
-
 ```css
-background: url(../img/bg-desktop.svg) hsl(257, 40%, 49%) no-repeat;
-    background-size: contain;
+/* === color overlay === */
+header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    background: var(--color-span);
+    opacity: .5;
+}
 ```
-- Box-shadow:
-
-```css
-	box-shadow: 0 .3rem .8rem rgba(0, 0, 0, 0.575);
-```
-
-### Useful resources
-
-- [Box-shadow](https://css-tricks.com/almanac/properties/b/box-shadow/) - This helped me with box-shadow.
